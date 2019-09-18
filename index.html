@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/18/搭建个人博客/">搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/18/搭建个人博客/" class="archive-article-date">
+  	<time datetime="2019-09-18T13:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前言：基于Windows系统，使用node.js+git+hexo搭建个人博客</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>安装node.js</li>
+<li>注册GitHub账号</li>
+<li>安装Git<h3 id="开始安装hexo"><a href="#开始安装hexo" class="headerlink" title="开始安装hexo"></a>开始安装hexo</h3></li>
+</ul>
+<p>1.打开Git终端执行命令：npm install -g hexo-cli  安装hexo<br>2.新建文件夹，进入到文件夹中执行命令：hexo init  将文件夹初始化为一个博客<br>3.执行命令：hexo s  启动服务，可以访问localhost:4000<br>4.再执行hexo install 安装一些依赖<br>5.npm install hexo-deplover-git –save，也可以稍后安装<br>6.修改hexo目录下的post_asset_folder: false为post_asset_folder: true<br><img src="/2019/09/18/搭建个人博客/%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE.png" alt="设置站点配置_config.yml"><br>7.运行hexo n “XXXXXX”,生成XXXXX.md博文时就会在/source/_posts目录下生成XXXXXX的文件夹，将想在XXXXX博文中插入的照片放置到这个同名文件夹中即可，图片的命名随意。<br>8.npm install hexo-asset-image –save<br>9.登录GitHub新建一个仓库，仓库名必须是“用户名.github.io”，复制仓库的http地址到初始化后的目录下对_config.yml文件中的deployment项进行配置，注意格式（空格）<br><img src="/2019/09/18/搭建个人博客/hexo%E4%B8%8EGitHub%E5%85%B3%E8%81%94.jpg" alt="hexo与GitHub关联"><br>10.博客的文件是在初始化后的目录中的source/_posts下，后缀是.md,当改动博客文件后需要重新进行部署：hexo g -d</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">安装一个可以上传本地图片的插件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/18/搭建个人博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-again" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -258,7 +338,7 @@
 <li>注册GitHub账号</li>
 <li>安装Git<h3 id="开始安装hexo"><a href="#开始安装hexo" class="headerlink" title="开始安装hexo"></a>开始安装hexo</h3></li>
 </ul>
-<p>1.打开Git终端执行命令：npm install -g hexo-cli  安装hexo<br>2.新建文件夹，进入到文件夹中执行命令：hexo init  将文件夹初始化为一个博客<br>3.执行命令：hexo s  启动服务，可以访问localhost:4000<br>4.再执行hexo install 安装一些依赖<br>5.npm install hexo-deplover-git –save，也可以稍后安装<br>6.登录GitHub新建一个仓库，仓库名必须是“用户名.github.io”，复制仓库的http地址到初始化后的目录下对_config.yml文件中的deployment项进行配置，注意格式（空格）<br><img src="/.com//hexo%E4%B8%8EGitHub%E5%85%B3%E8%81%94.png" alt="hexo与GitHub关联"><br>7.博客的文件是在初始化后的目录中的source/_posts下，后缀是.md,当改动博客文件后需要重新进行部署：hexo g -d</p>
+<p>1.打开Git终端执行命令：npm install -g hexo-cli  安装hexo<br>2.新建文件夹，进入到文件夹中执行命令：hexo init  将文件夹初始化为一个博客<br>3.执行命令：hexo s  启动服务，可以访问localhost:4000<br>4.再执行hexo install 安装一些依赖<br>5.npm install hexo-deplover-git –save，也可以稍后安装<br>6.登录GitHub新建一个仓库，仓库名必须是“用户名.github.io”，复制仓库的http地址到初始化后的目录下对_config.yml文件中的deployment项进行配置，注意格式（空格）<br><img src="/2019/09/18/blogtest/hexo%E4%B8%8EGitHub%E5%85%B3%E8%81%94.png" alt="hexo与GitHub关联"><br>7.博客的文件是在初始化后的目录中的source/_posts下，后缀是.md,当改动博客文件后需要重新进行部署：hexo g -d</p>
 
       
 
@@ -485,6 +565,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">截图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">安装一个可以上传本地图片的插件</a>
               </li>
             
             <div class="clearfix"></div>
