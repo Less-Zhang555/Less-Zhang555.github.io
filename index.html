@@ -338,6 +338,100 @@
 
 
   
+    <article id="post-数据处理与清理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/18/数据处理与清理/">数据处理与分析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/18/数据处理与清理/" class="archive-article-date">
+  	<time datetime="2019-09-18T13:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>读入数据到内存，例如csv文件、Excel文件、数据库</li>
+</ul>
+<h3 id="数据清理，这部分工作几乎占了数据分析五分之四的时间"><a href="#数据清理，这部分工作几乎占了数据分析五分之四的时间" class="headerlink" title="数据清理，这部分工作几乎占了数据分析五分之四的时间"></a>数据清理，这部分工作几乎占了数据分析五分之四的时间</h3><h4 id="先了解数据的大致内容，以及数据对应的业务知识"><a href="#先了解数据的大致内容，以及数据对应的业务知识" class="headerlink" title="先了解数据的大致内容，以及数据对应的业务知识"></a>先了解数据的大致内容，以及数据对应的业务知识</h4><ul>
+<li>print(df.head())  # 查看前5行数据</li>
+<li>print(df.shape)  # 查看行列数量</li>
+<li>print(df.dtypes)  # 查看每一列的数据类型</li>
+<li>print(df.describe())  # 查看每一列的数据特征（例如：中位数、最大值、上四分位数）</li>
+<li>print(df.info())  # 查看数据概况，和属性types相似</li>
+<li>print(df.count())  # 查看各个列的非空数据量</li>
+</ul>
+<h4 id="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"><a href="#对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理" class="headerlink" title="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"></a>对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理</h4><ul>
+<li>完整性：单条数据是否存在空值，统计的字段是否完善。</li>
+<li>全面性：观察某一列的全部数值，比如在 Excel 表中，我们选中一列，可以看到该列的平均值、最大值、最小值。我们可以通过常识来判断该列是否有问题，比如：数据定义、单位标识、数值本身。</li>
+<li>合法性：数据的类型、内容、大小的合法性。比如数据中存在非 ASCII 字符，性别存在了未知，年龄超过了 150 岁等。</li>
+<li>唯一性：数据是否存在重复记录，因为数据通常来自不同渠道的汇总，重复的情况是常见的。行数据、列数据都需要是唯一的，比如一个人不能重复记录多次，且一个人的体重也不能在列指标中重复记录多次</li>
+</ul>
+<h4 id="清洗完成，便可以根据业务需求进行分析"><a href="#清洗完成，便可以根据业务需求进行分析" class="headerlink" title="清洗完成，便可以根据业务需求进行分析"></a>清洗完成，便可以根据业务需求进行分析</h4><ul>
+<li>完整的代码示例可以点击下方链接</li>
+<li>[数据分析基本流程代码示例]（<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据处理与分析基本流程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/18/数据处理与清理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -389,100 +483,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/08/搭建个人博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据处理与清理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/08/数据处理与清理/">数据处理与分析</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/08/数据处理与清理/" class="archive-article-date">
-  	<time datetime="2019-09-08T13:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>读入数据到内存，例如csv文件、Excel文件、数据库</li>
-</ul>
-<h3 id="数据清理，这部分工作几乎占了数据分析五分之四的时间"><a href="#数据清理，这部分工作几乎占了数据分析五分之四的时间" class="headerlink" title="数据清理，这部分工作几乎占了数据分析五分之四的时间"></a>数据清理，这部分工作几乎占了数据分析五分之四的时间</h3><h4 id="先了解数据的大致内容，以及数据对应的业务知识"><a href="#先了解数据的大致内容，以及数据对应的业务知识" class="headerlink" title="先了解数据的大致内容，以及数据对应的业务知识"></a>先了解数据的大致内容，以及数据对应的业务知识</h4><ul>
-<li>print(df.head())  # 查看前5行数据</li>
-<li>print(df.shape)  # 查看行列数量</li>
-<li>print(df.dtypes)  # 查看每一列的数据类型</li>
-<li>print(df.describe())  # 查看每一列的数据特征（例如：中位数、最大值、上四分位数）</li>
-<li>print(df.info())  # 查看数据概况，和属性types相似</li>
-<li>print(df.count())  # 查看各个列的非空数据量</li>
-</ul>
-<h4 id="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"><a href="#对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理" class="headerlink" title="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"></a>对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理</h4><ul>
-<li>完整性：单条数据是否存在空值，统计的字段是否完善。</li>
-<li>全面性：观察某一列的全部数值，比如在 Excel 表中，我们选中一列，可以看到该列的平均值、最大值、最小值。我们可以通过常识来判断该列是否有问题，比如：数据定义、单位标识、数值本身。</li>
-<li>合法性：数据的类型、内容、大小的合法性。比如数据中存在非 ASCII 字符，性别存在了未知，年龄超过了 150 岁等。</li>
-<li>唯一性：数据是否存在重复记录，因为数据通常来自不同渠道的汇总，重复的情况是常见的。行数据、列数据都需要是唯一的，比如一个人不能重复记录多次，且一个人的体重也不能在列指标中重复记录多次</li>
-</ul>
-<h4 id="清洗完成，便可以根据业务需求进行分析"><a href="#清洗完成，便可以根据业务需求进行分析" class="headerlink" title="清洗完成，便可以根据业务需求进行分析"></a>清洗完成，便可以根据业务需求进行分析</h4><ul>
-<li>完整的代码示例可以点击下方链接</li>
-<li>[数据分析基本流程代码示例]（<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据处理与分析基本流程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/08/数据处理与清理/">展开全文 >></a>
         </p>
       
 
