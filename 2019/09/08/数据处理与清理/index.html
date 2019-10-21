@@ -6,27 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>使用matplotlib.pyplot绘图 | Hexo</title>
+  <title>数据处理与分析 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="matplotlib.pyplot绘图的基本实现 导入matplotlib.pyplot模块：import matplotlib.pyplot as plt 确定横纵坐标的值：x = [1, 2, 3, 4, 5]     y = [1, 4, 9, 16, 25] 通过plot()画图：plt.plot(x, y) 保存图片：plt.savefig(‘文件存储路径’) 显示图片：plt.show">
-<meta name="keywords" content="使用matplotlib包中的pyplot模块进行绘图">
+  <meta name="description" content="准备工作 读入数据到内存，例如csv文件、Excel文件、数据库  数据清理，这部分工作几乎占了数据分析五分之四的时间先了解数据的大致内容，以及数据对应的业务知识 print(df.head())  # 查看前5行数据 print(df.shape)  # 查看行列数量 print(df.dtypes)  # 查看每一列的数据类型 print(df.describe())  # 查看每一列的数据特">
+<meta name="keywords" content="数据处理与分析基本流程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用matplotlib.pyplot绘图">
-<meta property="og:url" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/index.html">
+<meta property="og:title" content="数据处理与分析">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/数据处理与清理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="matplotlib.pyplot绘图的基本实现 导入matplotlib.pyplot模块：import matplotlib.pyplot as plt 确定横纵坐标的值：x = [1, 2, 3, 4, 5]     y = [1, 4, 9, 16, 25] 通过plot()画图：plt.plot(x, y) 保存图片：plt.savefig(‘文件存储路径’) 显示图片：plt.show">
+<meta property="og:description" content="准备工作 读入数据到内存，例如csv文件、Excel文件、数据库  数据清理，这部分工作几乎占了数据分析五分之四的时间先了解数据的大致内容，以及数据对应的业务知识 print(df.head())  # 查看前5行数据 print(df.shape)  # 查看行列数量 print(df.dtypes)  # 查看每一列的数据类型 print(df.describe())  # 查看每一列的数据特">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/pyplot%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/pyplot%E8%BF%9B%E9%98%B6%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/%E9%A5%BC%E5%9B%BE.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9D%90%E6%A0%87%E7%B3%BB.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/%E8%AE%BE%E7%BD%AE%E5%9D%90%E6%A0%87%E8%BD%B4%E8%8C%83%E5%9B%B4.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%83%8F%E5%8C%85%E5%9B%B4%E7%BA%BF.png">
-<meta property="og:updated_time" content="2019-09-21T01:08:44.277Z">
+<meta property="og:updated_time" content="2019-10-21T16:30:57.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用matplotlib.pyplot绘图">
-<meta name="twitter:description" content="matplotlib.pyplot绘图的基本实现 导入matplotlib.pyplot模块：import matplotlib.pyplot as plt 确定横纵坐标的值：x = [1, 2, 3, 4, 5]     y = [1, 4, 9, 16, 25] 通过plot()画图：plt.plot(x, y) 保存图片：plt.savefig(‘文件存储路径’) 显示图片：plt.show">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/20/matplotlib-pyplot/pyplot%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0.png">
+<meta name="twitter:title" content="数据处理与分析">
+<meta name="twitter:description" content="准备工作 读入数据到内存，例如csv文件、Excel文件、数据库  数据清理，这部分工作几乎占了数据分析五分之四的时间先了解数据的大致内容，以及数据对应的业务知识 print(df.head())  # 查看前5行数据 print(df.shape)  # 查看行列数量 print(df.dtypes)  # 查看每一列的数据类型 print(df.describe())  # 查看每一列的数据特">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,49 +155,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-matplotlib-pyplot" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据处理与清理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用matplotlib.pyplot绘图
+      数据处理与分析
     </h1>
   
 
         
-        <a href="/2019/09/20/matplotlib-pyplot/" class="archive-article-date">
-  	<time datetime="2019-09-20T03:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
+        <a href="/2019/09/08/数据处理与清理/" class="archive-article-date">
+  	<time datetime="2019-09-08T13:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id><a href="#" class="headerlink" title></a></h1><h1 id="matplotlib-pyplot绘图的基本实现"><a href="#matplotlib-pyplot绘图的基本实现" class="headerlink" title="matplotlib.pyplot绘图的基本实现"></a>matplotlib.pyplot绘图的基本实现</h1><ol>
-<li>导入matplotlib.pyplot模块：import matplotlib.pyplot as plt</li>
-<li>确定横纵坐标的值：x = [1, 2, 3, 4, 5]     y = [1, 4, 9, 16, 25]</li>
-<li>通过plot()画图：plt.plot(x, y)</li>
-<li>保存图片：plt.savefig(‘文件存储路径’)</li>
-<li>显示图片：plt.show()<br><img src="/2019/09/20/matplotlib-pyplot/pyplot%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0.png" alt="matplotlib.pyplot绘图的简单实现"><h2 id="matplotlib-pyplot之绘制折线图"><a href="#matplotlib-pyplot之绘制折线图" class="headerlink" title="matplotlib.pyplot之绘制折线图"></a>matplotlib.pyplot之绘制折线图</h2></li>
-</ol>
-<ul>
-<li>使用matplotlib.pyplot绘图的进阶功能<br><img src="/2019/09/20/matplotlib-pyplot/pyplot%E8%BF%9B%E9%98%B6%E5%AE%9E%E7%8E%B0.png" alt="matplotlib.pyplot绘图的进阶实现"></li>
-<li>进入GitHub查看完整代码：[绘制折线图完整代码(<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/matplotlib_plot_line_chart.py" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/matplotlib_plot_line_chart.py</a>)<h2 id="matplotlib-pyplot之绘制散点图"><a href="#matplotlib-pyplot之绘制散点图" class="headerlink" title="matplotlib.pyplot之绘制散点图"></a>matplotlib.pyplot之绘制散点图</h2><h2 id="matplotlib-pyplot之绘制柱状（条形）图"><a href="#matplotlib-pyplot之绘制柱状（条形）图" class="headerlink" title="matplotlib.pyplot之绘制柱状（条形）图"></a>matplotlib.pyplot之绘制柱状（条形）图</h2><h2 id="matplotlib-pyplot之绘制直方图"><a href="#matplotlib-pyplot之绘制直方图" class="headerlink" title="matplotlib.pyplot之绘制直方图"></a>matplotlib.pyplot之绘制直方图</h2><h2 id="matplotlib-pyplot之绘制饼图"><a href="#matplotlib-pyplot之绘制饼图" class="headerlink" title="matplotlib.pyplot之绘制饼图"></a>matplotlib.pyplot之绘制饼图</h2><img src="/2019/09/20/matplotlib-pyplot/%E9%A5%BC%E5%9B%BE.png" alt="matplotlib.pyplot绘制饼图"></li>
-<li>进入GitHub查看完整代码：[绘制饼图(<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/matplotlib_plot_pie_chart.py" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/matplotlib_plot_pie_chart.py</a>)<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1></li>
+        <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>读入数据到内存，例如csv文件、Excel文件、数据库</li>
 </ul>
-<p>1.多个子坐标系<br><img src="/2019/09/20/matplotlib-pyplot/%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9D%90%E6%A0%87%E7%B3%BB.png" alt="matplotlib.pyplot绘制多个子坐标系"></p>
-<ul>
-<li>进入GitHub查看完整代码：[绘制多个子坐标系(<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/mutiple_coordinate_system.py" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/mutiple_coordinate_system.py</a>)</li>
+<h3 id="数据清理，这部分工作几乎占了数据分析五分之四的时间"><a href="#数据清理，这部分工作几乎占了数据分析五分之四的时间" class="headerlink" title="数据清理，这部分工作几乎占了数据分析五分之四的时间"></a>数据清理，这部分工作几乎占了数据分析五分之四的时间</h3><h4 id="先了解数据的大致内容，以及数据对应的业务知识"><a href="#先了解数据的大致内容，以及数据对应的业务知识" class="headerlink" title="先了解数据的大致内容，以及数据对应的业务知识"></a>先了解数据的大致内容，以及数据对应的业务知识</h4><ul>
+<li>print(df.head())  # 查看前5行数据</li>
+<li>print(df.shape)  # 查看行列数量</li>
+<li>print(df.dtypes)  # 查看每一列的数据类型</li>
+<li>print(df.describe())  # 查看每一列的数据特征（例如：中位数、最大值、上四分位数）</li>
+<li>print(df.info())  # 查看数据概况，和属性types相似</li>
+<li>print(df.count())  # 查看各个列的非空数据量</li>
 </ul>
-<p>2.设置坐标轴范围<br><img src="/2019/09/20/matplotlib-pyplot/%E8%AE%BE%E7%BD%AE%E5%9D%90%E6%A0%87%E8%BD%B4%E8%8C%83%E5%9B%B4.png" alt="matplotlib.pyplot设置坐标轴范围"></p>
-<ul>
-<li>进入GitHub查看完整代码：[设置坐标轴范围(<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/set_range_of_axis.py" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/set_range_of_axis.py</a>)</li>
+<h4 id="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"><a href="#对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理" class="headerlink" title="对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理"></a>对每一列的数据判断异常，根据业务需求，常识等为判断依据对数据采取不同的处理</h4><ul>
+<li>完整性：单条数据是否存在空值，统计的字段是否完善。</li>
+<li>全面性：观察某一列的全部数值，比如在 Excel 表中，我们选中一列，可以看到该列的平均值、最大值、最小值。我们可以通过常识来判断该列是否有问题，比如：数据定义、单位标识、数值本身。</li>
+<li>合法性：数据的类型、内容、大小的合法性。比如数据中存在非 ASCII 字符，性别存在了未知，年龄超过了 150 岁等。</li>
+<li>唯一性：数据是否存在重复记录，因为数据通常来自不同渠道的汇总，重复的情况是常见的。行数据、列数据都需要是唯一的，比如一个人不能重复记录多次，且一个人的体重也不能在列指标中重复记录多次</li>
 </ul>
-<p>3.设置图像的包围线<br><img src="/2019/09/20/matplotlib-pyplot/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%83%8F%E5%8C%85%E5%9B%B4%E7%BA%BF.png" alt="matplotlib.pyplot设置图像的包围线"></p>
-<ul>
-<li>进入GitHub查看完整代码：[设置图像的包围线(<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/set_show_of_axis.py" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/set_show_of_axis.py</a>)</li>
+<h4 id="清洗完成，便可以根据业务需求进行分析"><a href="#清洗完成，便可以根据业务需求进行分析" class="headerlink" title="清洗完成，便可以根据业务需求进行分析"></a>清洗完成，便可以根据业务需求进行分析</h4><ul>
+<li>完整的代码示例可以点击下方链接</li>
+<li>[数据分析基本流程代码示例]（<a href="https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）" target="_blank" rel="noopener">https://github.com/Less-Zhang555/dataAnalysis/blob/master/google_app.py）</a></li>
 </ul>
 
       
@@ -240,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">使用matplotlib包中的pyplot模块进行绘图</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据处理与分析基本流程</a>
         		</li>
       		
 		</ul>
@@ -296,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/20/matplotlib-pyplot/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/08/数据处理与清理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -310,9 +300,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/08/搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          搭建个人博客
+        
+      </div>
+    </a>
   
-    <a href="/2019/09/18/markdown常用语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown常用语法</div>
+  
+    <a href="/2019/09/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
