@@ -46,7 +46,7 @@
 			<img src="" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Less</a></h1>
+		  <h1 class="header-author"><a href="/">Heifoon</a></h1>
 		</hgroup>
 		
 
@@ -104,7 +104,7 @@
 				<img src="" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Less</h1>
+			  <h1 class="header-author js-header-author">Heifoon</h1>
 			</hgroup>
 			
 			
@@ -432,6 +432,78 @@
 
 
   
+    <article id="post-git基础学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/git基础学习/">git基础学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/10/git基础学习/" class="archive-article-date">
+  	<time datetime="2019-09-10T04:08:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><font face="微软雅黑" size="6">Git基础学习</font></center>
+
+<h2 id="一、Git介绍"><a href="#一、Git介绍" class="headerlink" title="一、Git介绍"></a>一、Git介绍</h2><h3 id="git是目前世界最先进的分布式版本控制系统，git可以追踪此仓库里面所有文件的修改，删除，以便将来可以还原-git是Linus写的，因此git终端是仿Linux系统的"><a href="#git是目前世界最先进的分布式版本控制系统，git可以追踪此仓库里面所有文件的修改，删除，以便将来可以还原-git是Linus写的，因此git终端是仿Linux系统的" class="headerlink" title="git是目前世界最先进的分布式版本控制系统，git可以追踪此仓库里面所有文件的修改，删除，以便将来可以还原,git是Linus写的，因此git终端是仿Linux系统的"></a>git是目前世界最先进的分布式版本控制系统，git可以追踪此仓库里面所有文件的修改，删除，以便将来可以还原,git是Linus写的，因此git终端是仿Linux系统的</h3><h2 id="二、学习使用git需要先在GitHub官网上注册一个账户，之后在本地电脑安装好git工具"><a href="#二、学习使用git需要先在GitHub官网上注册一个账户，之后在本地电脑安装好git工具" class="headerlink" title="二、学习使用git需要先在GitHub官网上注册一个账户，之后在本地电脑安装好git工具"></a>二、学习使用git需要先在GitHub官网上注册一个账户，之后在本地电脑安装好git工具</h2><ol>
+<li>配置用户信息：在git终端执行命令git config –global user.name “github用户名”（需要双引号）；执行git config –global user.email “github注册的邮箱”（要用引号）</li>
+<li>常用命令<br>git add 文件名     把文件搬到仓库里<br>git commit -m “对提交的文件打一个标签”        把文件放到仓库里面的货架上</li>
+<li>将本地代码放到GitHub上：<br>首先创建SSH KEY，在git 终端执行命令ssh-keygen -t  rsa -C “GitHub注册的邮箱”（要用引号）在/C/user/电脑账户/.ssh/中生成密钥（有私钥和公钥），密钥是用来标记电脑的，只有将密钥挂载到GitHub账户，才有权限向该GitHub账户传文件（此处是挂载公钥），<br>添加完公钥后执行命令ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>检测密钥是否添加成功，之后在GitHub里新建一个远程仓库，用<br>命令 git clone 远程看地址    将远程库拉到本地，<br>命令git push origin master    推送到远程库<br>命令git pull origin master    录取远程库内容到本地库</li>
+<li>分支：<br>主分支（master）,其它的分支（branch1，branch2,……）<br>git branch 分支名    创建一个分支<br>git checkout 分支名    切换分支<br>git merge 分支名    合并分支（要往哪一个分支上合并就要处于哪一个分支上）<br>git branch    查看分支以及处在哪个分支上<br>git push –set-upstream origin 分支名）    推送内容到某个分支（第一次推送时要加上–set-upstream，可以在远程库上也创建一个对应的分支，以后推送就可以不需要）<br>当把远程库拉下来后只会有一个master分支，要先建立一个分支，在用git pull origin 分支名   拉取相对应的分支<br>git branch -d 分支名        删除分支<br>git push origin :分支名    删除远程分支<br>git push origin –delete 分支名        删除远程分支</li>
+<li>版本回退命令：<br>git reset –hard HEAD^    回退到上一个版本<br>git reset –hard HEAD^^    回退到上上一个版本<br>git reset –hard HEAD-100    回退到上100个版本<br>git reset –hard 具体版本号（执行git log 可以查看到提交日志）<br>git status 查看仓库当前的状态，可以看到哪个文件被改动<br>git diff 查看修改内容<br>git log 查看提交日志<br>git check – filename    撤销到最后一次add或commit的状态</li>
+<li>.git目录是真正的仓库，.git所在目录称为工作区，暂存区和版本区在仓库里，add 是把文件提交到暂存区（仓库里），commit是把文件提交到版本区（仓库中的货架）</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/10/git基础学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -679,7 +751,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Less
+    		&copy; 2020 Heifoon
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -762,15 +834,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">安装一个可以上传本地图片的插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编写博文之markdown基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">使用matplotlib包中的pyplot模块进行绘图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">安装一个可以上传本地图片的插件</a>
               </li>
              
               <li class="article-tag-list-item">
