@@ -512,6 +512,88 @@
 
 
   
+    <article id="post-使用hexo-github搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/使用hexo-github搭建个人博客/">使用hexo+github搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/08/使用hexo-github搭建个人博客/" class="archive-article-date">
+  	<time datetime="2019-09-08T02:54:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><font face="微软雅黑" size="6">使用hexo+GitHub搭建个人博客</font></center>
+
+<h2 id="一、hexo介绍"><a href="#一、hexo介绍" class="headerlink" title="一、hexo介绍"></a>一、hexo介绍</h2><h3 id="Hexo是一个快速-简洁且高效的博客框架-让上百个页面在几秒内瞬间完成渲染-Hexo支持Github-Flavored-Markdown的所有功能-甚至可以整合Octopress的大多数插件-并自己也拥有强大的插件系统。"><a href="#Hexo是一个快速-简洁且高效的博客框架-让上百个页面在几秒内瞬间完成渲染-Hexo支持Github-Flavored-Markdown的所有功能-甚至可以整合Octopress的大多数插件-并自己也拥有强大的插件系统。" class="headerlink" title="Hexo是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统。"></a>Hexo是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统。</h3><h2 id="二、搭建个人博客"><a href="#二、搭建个人博客" class="headerlink" title="二、搭建个人博客"></a>二、搭建个人博客</h2><ol>
+<li>Hexo是基于node.js的，所以我们在安装它之前需要用到npm安装工具，这个工具是 node.js 安装包的工具，所以，我们先要安装 node.js（node -v    和    npm -v 检查是否安装成功以及查看版本）</li>
+<li>node.js安装好后可以执行命令npm install -g hexo-cli安装hexo（hexo -v检查是否安装成功以及查看版本）</li>
+<li>建立任意一个文件夹进入到该文件夹，并执行hexo init 将其初始化化为一个博客，类似自己新建git仓库</li>
+<li>在该目录下执行命令 hexo s 启动博客（s:start/server）,这是启动本地服务，可以通过localhost:4000访问</li>
+<li>执行命令 hexo n “文章的名字”    生成一个文件 (n:new)</li>
+<li>执行命令 hexo g 生成文章，此时是在本地电脑上的，可以通过访问localhost来查看 （g:generate）</li>
+<li>将博客部署在GitHub上：（看看此时是否有_config.yml文件，若没有则执行下一步后再看）</li>
+<li>在此前创建的博客文件夹下执行npm install hexo-deployer-git –save 安装部署文件到github时需要的一个插件</li>
+<li>设置在当前目录下的_config.yml文件：登录GitHub新建一个仓库，仓库名必须是“用户名.github.io”，复制仓库的http地址到初始化后的目录下对_config.yml文件中的deployment项进行配置，注意格式（空格）<br><img src="/2019/09/08/使用hexo-github搭建个人博客/deploy%E9%85%8D%E7%BD%AE.png" alt="deploy配置"></li>
+<li>配置完成后就可以执行命令hexo d 部署到远端 (d:deploy),至此便完成了基本的博客创建，下面是自定义博客主题</li>
+</ol>
+<h2 id="三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo-io）查看-这里用的主题是GitHub上其它作者编写的"><a href="#三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo-io）查看-这里用的主题是GitHub上其它作者编写的" class="headerlink" title="三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo.io）查看,这里用的主题是GitHub上其它作者编写的"></a>三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo.io）查看,这里用的主题是GitHub上其它作者编写的</h2><ol>
+<li>在博客目录里执行 git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia 将yilia这个主题下载到themes目录中</li>
+<li>设置在博客目录中的_config.yml文件，将thems选项后面的landscape主题换为yilia</li>
+<li>此时在本地的主题设置完成，在执行hexo d 就将本地更改部署到远端</li>
+</ol>
+<h2 id="四、在博客里显示本地图片"><a href="#四、在博客里显示本地图片" class="headerlink" title="四、在博客里显示本地图片"></a>四、在博客里显示本地图片</h2><p>先在_config.yml文件里设置post_asset_folder为true,之后在博客目录下执行 npm install hexo-asset-image –save命令来下载一个上传图片的插件，执行hexo n “文章名” 会生成一个与文件同名的目录，将想要上传的图片放在该目录下，用markdown的格式引入图片即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/08/使用hexo-github搭建个人博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -558,88 +640,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/07/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使用hexo-github搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/06/使用hexo-github搭建个人博客/">使用hexo+github搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/06/使用hexo-github搭建个人博客/" class="archive-article-date">
-  	<time datetime="2019-09-06T02:54:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <center><font face="微软雅黑" size="6">使用hexo+GitHub搭建个人博客</font></center>
-
-<h2 id="一、hexo介绍"><a href="#一、hexo介绍" class="headerlink" title="一、hexo介绍"></a>一、hexo介绍</h2><h3 id="Hexo是一个快速-简洁且高效的博客框架-让上百个页面在几秒内瞬间完成渲染-Hexo支持Github-Flavored-Markdown的所有功能-甚至可以整合Octopress的大多数插件-并自己也拥有强大的插件系统。"><a href="#Hexo是一个快速-简洁且高效的博客框架-让上百个页面在几秒内瞬间完成渲染-Hexo支持Github-Flavored-Markdown的所有功能-甚至可以整合Octopress的大多数插件-并自己也拥有强大的插件系统。" class="headerlink" title="Hexo是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统。"></a>Hexo是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统。</h3><h2 id="二、搭建个人博客"><a href="#二、搭建个人博客" class="headerlink" title="二、搭建个人博客"></a>二、搭建个人博客</h2><ol>
-<li>Hexo是基于node.js的，所以我们在安装它之前需要用到npm安装工具，这个工具是 node.js 安装包的工具，所以，我们先要安装 node.js（node -v    和    npm -v 检查是否安装成功以及查看版本）</li>
-<li>node.js安装好后可以执行命令npm install -g hexo-cli安装hexo（hexo -v检查是否安装成功以及查看版本）</li>
-<li>建立任意一个文件夹进入到该文件夹，并执行hexo init 将其初始化化为一个博客，类似自己新建git仓库</li>
-<li>在该目录下执行命令 hexo s 启动博客（s:start/server）,这是启动本地服务，可以通过localhost:4000访问</li>
-<li>执行命令 hexo n “文章的名字”    生成一个文件 (n:new)</li>
-<li>执行命令 hexo g 生成文章，此时是在本地电脑上的，可以通过访问localhost来查看 （g:generate）</li>
-<li>将博客部署在GitHub上：（看看此时是否有_config.yml文件，若没有则执行下一步后再看）</li>
-<li>在此前创建的博客文件夹下执行npm install hexo-deployer-git –save 安装部署文件到github时需要的一个插件</li>
-<li>设置在当前目录下的_config.yml文件：登录GitHub新建一个仓库，仓库名必须是“用户名.github.io”，复制仓库的http地址到初始化后的目录下对_config.yml文件中的deployment项进行配置，注意格式（空格）<br><img src="/2019/09/06/使用hexo-github搭建个人博客/deploy%E9%85%8D%E7%BD%AE.png" alt="deploy配置"></li>
-<li>配置完成后就可以执行命令hexo d 部署到远端 (d:deploy),至此便完成了基本的博客创建，下面是自定义博客主题</li>
-</ol>
-<h2 id="三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo-io）查看-这里用的主题是GitHub上其它作者编写的"><a href="#三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo-io）查看-这里用的主题是GitHub上其它作者编写的" class="headerlink" title="三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo.io）查看,这里用的主题是GitHub上其它作者编写的"></a>三、定义个人主题，博客的主题有很多，可以在hexo官网（hexo.io）查看,这里用的主题是GitHub上其它作者编写的</h2><ol>
-<li>在博客目录里执行 git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia 将yilia这个主题下载到themes目录中</li>
-<li>设置在博客目录中的_config.yml文件，将thems选项后面的landscape主题换为yilia</li>
-<li>此时在本地的主题设置完成，在执行hexo d 就将本地更改部署到远端</li>
-</ol>
-<h2 id="四、在博客里显示本地图片"><a href="#四、在博客里显示本地图片" class="headerlink" title="四、在博客里显示本地图片"></a>四、在博客里显示本地图片</h2><p>先在_config.yml文件里设置post_asset_folder为true,之后在博客目录下执行 npm install hexo-asset-image –save命令来下载一个上传图片的插件，执行hexo n “文章名” 会生成一个与文件同名的目录，将想要上传的图片放在该目录下，用markdown的格式引入图片即可</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/06/使用hexo-github搭建个人博客/">展开全文 >></a>
         </p>
       
 
