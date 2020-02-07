@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/07/数据库优化/">数据库优化</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/07/数据库优化/" class="archive-article-date">
+  	<time datetime="2020-02-07T09:33:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><font size="6">数据库优化</font></center>
+
+<h2 id="一、数据库优化（构建数据库表-gt-形成数据量小-gt-庞大的数据库）"><a href="#一、数据库优化（构建数据库表-gt-形成数据量小-gt-庞大的数据库）" class="headerlink" title="一、数据库优化（构建数据库表-&gt;形成数据量小-&gt;庞大的数据库）"></a>一、数据库优化（构建数据库表-&gt;形成数据量小-&gt;庞大的数据库）</h2><ol>
+<li>表结构设计：要考虑到数据库以后的扩展问题，查询的快慢问题（利用空间换取时间），设计表的时候看能不能减少关联查询，三范式原则<br><a href="http://zhihu.com/question/24696366" target="_blank" rel="noopener">关系数据库的常见设计范式</a></li>
+<li>建索引,主键、唯一约束（unique）、索引（key/index:若是某些字段总是出现在where语句中用作查询条件的话，可以设为索引）、外键（没有外键也可以完成业务需求，但可以保护数据的完整性）<br><a href="http://www.jianshu.com/p/2b541c028157" target="_blank" rel="noopener">建索引</a><br>注：（1）联合索引（若多个字段总是以and连接的方式出现在where语句中，则可以将这些字段设为联合索引）<br> （2）索引的利弊：索引会降低对字段的增删改</li>
+<li>sql语句优化：使用索引、注意关键字顺序、最左原则（把建有索引的字段尽量放在条件语句的左边，若是联合索引更要按照创建联合索引时的顺序写查询条件）<br> （1）不要使用select *    能使用联合查询（join），就不要使用嵌套（子查询）(where后面的条件中还有其它的select语句)<br> （2）能不使用联合查询就不要使用联合查询<br> （3）外键  cascade  级联  （维护外键有额外开销，影响性能），当数据量小的时候需要建立外键来维护数据的完整性，数据量大的时候不再使用外键<br> （4）使用分析工具分析效率低的sql语句   慢查询工具<br><a href="https://flyerboy.github.io/2016/12/23/mysql_slow/" target="_blank" rel="noopener">MySQL慢查询设置和分析工具</a><br><a href="https://yemengying.com/2016/05/24/mysql-tuning/" target="_blank" rel="noopener">MySQL调优</a></li>
+<li>缓存:若sql语句已经不能在优化了，则使用缓存，<br> redis   me</li>
+<li>读（从）写（增删改）分离<br> 主从热备份（MySQL数据库可以通过配置文件设置主、从数据库实现数据在两台机器上同步，两台机器都同时运行）   主写从读</li>
+<li>分库分表  水平分库分表<br><a href="http://www.infoq.com/cn/articles/key-steps-and-likely-problems-of-split-table" target="_blank" rel="noopener">分库分表的几种常见形式</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/07/数据库优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-matplotlib-pyplot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -834,11 +906,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编写博文之markdown基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color3">使用matplotlib包中的pyplot模块进行绘图</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">使用matplotlib包中的pyplot模块进行绘图</a>
+                <a href="javascript:void(0)" class="js-tag color3">编写博文之markdown基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
